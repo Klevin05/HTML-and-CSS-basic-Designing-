@@ -39,7 +39,7 @@ body{
   top: 55%;
   left: 10%;
   position: absolute;
-  width: 1200px;
+  
 }
 #block1{
   background-color: rgba(255, 255, 255, 0.795);
@@ -91,21 +91,139 @@ body{
         <p id="tb2">One place for all the flight details!</p>
         <p id="tb1">Aero Lite!</p>
         <form class="d-flex" id="form2">
-          <input class="form-control me-2" type="search" placeholder="Arrival" aria-label="Arrival">
-          <input class="form-control me-2" type="search" placeholder="Departure" aria-label="Departure">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Date
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+          <input class="form-control me-2" type="search" placeholder="Arrival" aria-label="Arrival" style="width: 350px">
+          <input class="form-control me-2" type="search" placeholder="Departure" aria-label="Departure" style="width: 350px">
+          <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+            <input placeholder="Select date" type="text" id="example" class="form-control">
+            <label for="example">Try me...</label>
+            <i class="fas fa-calendar input-prefix"></i>
           </div>
           <button type="button" class="btn btn-info" type="submit">Search</button>
          </form>
     </div>
+    <script>
+      // Strings and translations
+monthsFull: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+'November', 'December'],
+monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+weekdaysFull: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+weekdaysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+showMonthsShort: undefined,
+showWeekdaysFull: undefined,
+
+// Buttons
+today: 'Today',
+clear: 'Clear',
+close: 'Close',
+
+// Accessibility labels
+labelMonthNext: 'Next month',
+labelMonthPrev: 'Previous month',
+labelMonthSelect: 'Select a month',
+labelYearSelect: 'Select a year',
+
+// Formats
+format: 'd mmmm, yyyy',
+formatSubmit: undefined,
+hiddenPrefix: undefined,
+hiddenSuffix: '_submit',
+hiddenName: undefined,
+
+// Editable input
+editable: undefined,
+
+// Dropdown selectors
+selectYears: undefined,
+selectMonths: undefined,
+
+// First day of the week
+firstDay: undefined,
+
+// Date limits
+min: undefined,
+max: undefined,
+
+// Disable dates
+disable: undefined,
+
+// Root picker container
+container: undefined,
+
+// Hidden input container
+containerHidden: undefined,
+
+// Close on a user action
+closeOnSelect: true,
+closeOnClear: true,
+
+// Events
+onStart: undefined,
+onRender: undefined,
+onOpen: undefined,
+onClose: undefined,
+onSet: undefined,
+onStop: undefined,
+
+// Classes
+klass: {
+
+// The element states
+input: 'picker__input',
+active: 'picker__input--active',
+
+// The root picker and states *
+picker: 'picker',
+opened: 'picker--opened',
+focused: 'picker--focused',
+
+// The picker holder
+holder: 'picker__holder',
+
+// The picker frame, wrapper, and box
+frame: 'picker__frame',
+wrap: 'picker__wrap',
+box: 'picker__box',
+
+// The picker header
+header: 'picker__header',
+
+// Month navigation
+navPrev: 'picker__nav--prev',
+navNext: 'picker__nav--next',
+navDisabled: 'picker__nav--disabled',
+
+// Month & year labels
+month: 'picker__month',
+year: 'picker__year',
+
+// Month & year dropdowns
+selectMonth: 'picker__select--month',
+selectYear: 'picker__select--year',
+
+// Table of dates
+table: 'picker__table',
+
+// Weekday labels
+weekdays: 'picker__weekday',
+
+// Day states
+day: 'picker__day',
+disabled: 'picker__day--disabled',
+selected: 'picker__day--selected',
+highlighted: 'picker__day--highlighted',
+now: 'picker__day--today',
+infocus: 'picker__day--infocus',
+outfocus: 'picker__day--outfocus',
+
+// The picker footer
+footer: 'picker__footer',
+
+// Today, clear, & close buttons
+buttonClear: 'picker__button--clear',
+buttonClose: 'picker__button--close',
+buttonToday: 'picker__button--today'
+}
+    </script>
     <section class="py-6 bg-gray-100">
       
     
